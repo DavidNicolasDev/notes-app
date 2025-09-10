@@ -22,7 +22,7 @@ Antes de ejecutar la aplicación asegúrate de contar con lo siguiente instalado
 ---
 
 ## 📂 Estructura del proyecto
-
+```bash
 ├── backend/ # Código del backend (Spring Boot + Maven)
 │ ├── src/ # Código fuente
 │ ├── pom.xml # Configuración Maven
@@ -38,119 +38,125 @@ Antes de ejecutar la aplicación asegúrate de contar con lo siguiente instalado
 ├── start.sh # Script para levantar toda la app
 ├── stop.sh # Script para detener toda la app
 └── README.md # Instrucciones
-
+```
 
 ---
 
 ## 🚀 Ejecución de la aplicación
 
 ### 1. Clonar el repositorio
-
-`git clone <url-del-repo>`
-`cd <carpeta-del-repo>`
-
+```bash
+git clone <url-del-repo>
+cd <carpeta-del-repo>
+```
 ### 2. Dar permisos a los scripts (si usas Linux o Mac)
-
+```bash
 chmod +x start.sh stop.sh
-
+```
 ### 3. Levantar la aplicación
-
+Ejecuta
+```bash
 ./start.sh
-
+```
 Este script realiza los siguientes pasos automáticamente:
 
-Levanta SQL Server en Docker.
-
-Compila y ejecuta el backend (Spring Boot).
-
-Instala dependencias y levanta el frontend (React + Vite).
+1. Levanta **SQL Server en Docker.**
+2. Compila y ejecuta el **backend (Spring Boot).**
+3. Instala dependencias y levanta el **frontend (React + Vite).**
 
 Cuando todo finalice correctamente verás en consola:
-
-✅ Aplicación levantada con éxito
-📍 Backend en: http://localhost:8080
-📍 Frontend en: http://localhost:5173
-
+```bash
+✅ Aplicación levantada con éxito.
+📍 Backend en: http://localhost:8080.
+📍 Frontend en: http://localhost:5173.
+```
 ### 4.🛑 Detener la aplicación
-
+Ejecuta
+```bash
 ./stop.sh
-
+```
 Este script:
-
-Detiene el backend.
-
-Detiene el frontend.
-
-Apaga el contenedor de SQL Server en Docker.
+- Detiene el backend.
+- Detiene el frontend.
+- Apaga el contenedor de SQL Server en Docker.
 
 En consola deberías ver:
-
+```bash
 ✅ Backend detenido
 ✅ Frontend detenido
 ✅ Todo detenido correctamente
-
+```
+---
 
 ## 🧪 Verificación
 
-Frontend: http://localhost:5173
-
-Backend (API): http://localhost:8080/api/notes
-
-Base de datos (SQL Server en Docker): puerto 1433
+- **Frontend:** http://localhost:5173
+- **Backend (API):** http://localhost:8080/api/notes
+- **Base de datos (SQL Server en Docker):** puerto 1433
 
 Ejemplo de prueba en Postman:
+```bash
 GET http://localhost:8080/api/notes?archived=false
-
+```
+---
 
 ## 📝 Logs y procesos
 
 Los logs de cada servicio se guardan en:
 
-backend.log
-
-frontend.log
+- `backend.log`
+- `frontend.log`
 
 Los procesos en ejecución se gestionan con:
 
-backend.pid
+- `backend.pid`
+- `frontend.pid`
 
-frontend.pid
+Estos archivos se crean al ejecutar `start.sh` y se eliminan al ejecutar `stop.sh`.
 
-Estos archivos se crean al ejecutar start.sh y se eliminan al ejecutar stop.sh.
+---
 
 ## ✨ Notas adicionales
 
-Ver los logs en vivo del backend:
+- Ver los logs en vivo del backend:
+```bash
 tail -f backend.log
+```
 
-Ver los logs en vivo del frontend:
+- Ver los logs en vivo del frontend:
+```bash
 tail -f frontend.log
+```
 
-Si algún servicio no inicia correctamente:
+- Si algún servicio no inicia correctamente:
 
-Asegúrar de que no haya procesos previos ocupando los puertos 8080 (backend), 5173 (frontend) o 1433 (SQL Server).
+  - Asegúrar de que no haya procesos previos ocupando los puertos **8080 (backend)**, **5173 (frontend)** o **1433 (SQL Server)**.
 
-Ejecuta ./stop.sh y luego ./start.sh nuevamente.
+  - Ejecuta `./stop.sh` y luego `./start.sh` nuevamente.
+
+---
 
 ## 📦 Dependencias principales
-Backend (Spring Boot)
+**Backend (Spring Boot)**
 
-Spring Boot 3.5.5
+- Spring Boot 3.5.5
 
-Spring Data JPA
+- Spring Data JPA
 
-Driver oficial de SQL Server (mssql-jdbc)
+- Driver oficial de SQL Server (mssql-jdbc)
 
-Lombok
+- Lombok
 
-Frontend (React + Vite)
+**Frontend (React + Vite)**
 
-React 18.3.1
+- React 18.3.1
 
-Vite 5.4.0
+- Vite 5.4.0
 
-Axios
+- Axios
+
+---
 
 ## 👨‍💻 Autores
 
-Richard David Nicolas Flores
+**Richard David Nicolas Flores**
