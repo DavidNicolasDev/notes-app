@@ -24,7 +24,7 @@ fi
 
 # Docker SQL Server
 echo "Deteniendo SQL Server en Docker..."
-docker compose down
+docker compose down -v
 
 echo "============================="
 echo "✅ Todo detenido correctamente"
